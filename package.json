@@ -1,0 +1,33 @@
+{
+  "name": "lodash-fun",
+  "version": "0.0.0",
+  "description": "A collection of logic and other functions for use with lodash/fp.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "LICENCE"
+  ],
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "Lodash",
+    "logic",
+    "Functional",
+    "FP"
+  ],
+  "author": "Jim Bulkowski <jim.b@paperelectron.com> (http://paperelectron.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
