@@ -1,6 +1,6 @@
 {
   "name": "lodash-fun",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A collection of logic and other functions for use with lodash/fp.",
   "main": "dist/index.js",
   "files": [
