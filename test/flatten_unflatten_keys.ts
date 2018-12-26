@@ -46,4 +46,5 @@ describe('Flattening objects', () => {
 
 
   })
+
 })
