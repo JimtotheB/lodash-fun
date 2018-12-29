@@ -10,6 +10,7 @@ export interface ReturnsType<T> {
   (arg: any): T
 }
 
+export * from './conformDeep'
 export {andWith} from './andWith'
 export {curryN} from './curryN'
 export {flattenKeys} from './flattenKeys'

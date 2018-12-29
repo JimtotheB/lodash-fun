@@ -913,28 +913,25 @@ img { max-width: 100%; }
 			<a href="classes/conformdeeperror.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Error</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/deepconformvalidator.html" class="tsd-kind-icon">Deep<wbr>Conform<wbr>Validator</a>
+			<a href="interfaces/conformdeepvalidationerrors.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validation<wbr>Errors</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/conformdeepvalidator.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/conformdeepvalidatorfun.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator<wbr>Fun</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="interfaces/returnstype.html" class="tsd-kind-icon">Returns<wbr>Type</a>
 		</li>
-		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="interfaces/validatorfun.html" class="tsd-kind-icon">Validator<wbr>Fun</a>
-		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 			<a href="globals.html#typeorerr" class="tsd-kind-icon">Type<wbr>OrErr</a>
 		</li>
-		<li class=" tsd-kind-variable">
-			<a href="globals.html#deepconform" class="tsd-kind-icon">Deep<wbr>Conform</a>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#conform" class="tsd-kind-icon">conform</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="globals.html#errorsfrom" class="tsd-kind-icon">errors<wbr>From</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="globals.html#uncappedmapvalues" class="tsd-kind-icon">uncapped<wbr>Map<wbr>Values</a>
@@ -946,6 +943,9 @@ img { max-width: 100%; }
 			<a href="globals.html#andwith" class="tsd-kind-icon">and<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="globals.html#conformdeep" class="tsd-kind-icon">conform<wbr>Deep</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="globals.html#curryn" class="tsd-kind-icon">curryN</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
@@ -954,8 +954,14 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function">
 			<a href="globals.html#flattenkeys" class="tsd-kind-icon">flatten<wbr>Keys</a>
 		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
+		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#unflattenkeys" class="tsd-kind-icon">unflatten<wbr>Keys</a>
@@ -965,8 +971,18 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h1 id="lodash-fun">Lodash Fun</h1>
-			<p>Some functional stuff that is not included with lodash. </p>
+			<h1 id="lodash-fun">Lodash-Fun</h1>
+			<h3 id="some-fun-utilities-logic-functions-and-stuff-that-is-not-included-with-lodash-fp-">Some fun utilities, logic functions and stuff that is not included with lodash/fp.</h3>
+			<p>Designed to be used hand in hand with <a href="https://github.com/lodash/lodash/wiki/FP-Guide">Lodash/fp</a></p>
+			<p>Written in TypeScript but usage in JS is perfectly fine. Named this way because I couldn&#39;t believe it wasn&#39;t taken.</p>
+			<h4 id="including">Including</h4>
+			<ul>
+				<li>Composable logic functions - andWith, orWith, ifElseWith</li>
+				<li>Object flattening/unflattening</li>
+				<li>deepConform - a powerful async object validation function.</li>
+				<li>curryN - Allows you to preserve types on functions you wish to curry.</li>
+			</ul>
+			<p><a href="https://jimtotheb.github.io/lodash-fun/index.html">Full TypeDoc documentation can be found here!</a></p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -982,9 +998,10 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Interfaces</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface"><a href="interfaces/deepconformvalidator.html" class="tsd-kind-icon">Deep<wbr>Conform<wbr>Validator</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/conformdeepvalidationerrors.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validation<wbr>Errors</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/conformdeepvalidator.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/conformdeepvalidatorfun.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator<wbr>Fun</a></li>
 							<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/returnstype.html" class="tsd-kind-icon">Returns<wbr>Type</a></li>
-							<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/validatorfun.html" class="tsd-kind-icon">Validator<wbr>Fun</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -993,13 +1010,11 @@ img { max-width: 100%; }
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#typeorerr" class="tsd-kind-icon">Type<wbr>OrErr</a></li>
 						</ul>
 					</section>
-					<section class="tsd-index-section ">
+					<section class="tsd-index-section tsd-is-not-exported">
 						<h3>Variables</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-variable"><a href="globals.html#deepconform" class="tsd-kind-icon">Deep<wbr>Conform</a></li>
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#conform" class="tsd-kind-icon">conform</a></li>
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#errorsfrom" class="tsd-kind-icon">errors<wbr>From</a></li>
-							<li class="tsd-kind-variable"><a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a></li>
-							<li class="tsd-kind-variable"><a href="globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a></li>
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#uncappedmapvalues" class="tsd-kind-icon">uncapped<wbr>Map<wbr>Values</a></li>
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#unflatten" class="tsd-kind-icon">unflatten</a></li>
 						</ul>
@@ -1008,10 +1023,13 @@ img { max-width: 100%; }
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function"><a href="globals.html#andwith" class="tsd-kind-icon">and<wbr>With</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#conformdeep" class="tsd-kind-icon">conform<wbr>Deep</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#curryn" class="tsd-kind-icon">curryN</a></li>
 							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#flatten" class="tsd-kind-icon">flatten</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#flattenkeys" class="tsd-kind-icon">flatten<wbr>Keys</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a></li>
 							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#unflattenkeys" class="tsd-kind-icon">unflatten<wbr>Keys</a></li>
 						</ul>
 					</section>
@@ -1026,20 +1044,20 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Type<wbr>OrErr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in conformDeep.ts:24</li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L45">conformDeep.ts:45</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
-		<section class="tsd-panel-group tsd-member-group ">
+		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 			<h2>Variables</h2>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="deepconform" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> Deep<wbr>Conform</h3>
-				<div class="tsd-signature tsd-kind-icon">Deep<wbr>Conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!config ? config : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null)).catch(identity)}if(isObject(val)) {return Bluebird.props(DeepConform(val, config[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, validatorObj)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})})</span></div>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="conform" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> conform</h3>
+				<div class="tsd-signature tsd-kind-icon">conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!config ? config : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null)).catch(identity)}if(isObject(val)) {return Bluebird.props(conform(val, config[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, validatorObj)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in conformDeep.ts:38</li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L106">conformDeep.ts:106</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1049,27 +1067,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">errors<wbr>From<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;compose(omitBy(negate(isError)),flattenKeys)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in conformDeep.ts:34</li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="ifelsewith" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> if<wbr>Else<wbr>With</h3>
-				<div class="tsd-signature tsd-kind-icon">if<wbr>Else<wbr>With<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((comparator: Function, trueFunc: Function, falseFunc: Function, arg: any): any &#x3D;&gt; {return comparator(arg) ? trueFunc(arg) : falseFunc(arg)})</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/ifElseWith.ts#L10">ifElseWith.ts:10</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="orwith" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> or<wbr>With</h3>
-				<div class="tsd-signature tsd-kind-icon">or<wbr>With<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((fun1: Function, fun2: Function, arg: any): boolean &#x3D;&gt; {return (fun1(arg) || fun2(arg))})</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/orWith.ts#L10">orWith.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L102">conformDeep.ts:102</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1079,7 +1077,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">uncapped<wbr>Map<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;mapValues.convert({cap: false})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in conformDeep.ts:12</li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L13">conformDeep.ts:13</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1089,7 +1087,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">unflatten<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;compose(reduce((acc, [k, v]) &#x3D;&gt; set(k, v, acc), {}), toPairs)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/unflattenKeys.ts#L9">unflattenKeys.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/unflattenKeys.ts#L9">unflattenKeys.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1127,7 +1125,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/andWith.ts#L49">andWith.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/andWith.ts#L30">andWith.ts:30</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1188,6 +1186,86 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="conformdeep" class="tsd-anchor"></a>
+				<h3>conform<wbr>Deep</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">conform<wbr>Deep<span class="tsd-signature-symbol">(</span>validatorObj<span class="tsd-signature-symbol">: </span><a href="interfaces/conformdeepvalidator.html" class="tsd-signature-type">ConformDeepValidator</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span>, srcObj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L159">conformDeep.ts:159</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Accepts an object containing functions to be applied to each property value in the second argument.</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>see</dt>
+								<dd><p><a href="interfaces/conformdeepvalidator.html">ConformDeepValidator</a> For details on the full validator object.</p>
+								</dd>
+								<dt>see</dt>
+								<dd><p><a href="interfaces/conformdeepvalidatorfun.html">ConformDeepValidatorFun</a> For details on the arguments and return values of validator functions.</p>
+								</dd>
+								<dt>see</dt>
+								<dd><p><a href="classes/conformdeeperror.html">ConformDeepError</a> For details on the rejection value from a failing <code>conformDeep</code></p>
+									<hr>
+									<p>Returns a Promise containing the validated object unless any of the individual validators throw or return
+										an Error object. Rejects with <a href="classes/conformdeeperror.html">ConformDeepError</a> otherwise, containing a <a href="globals.html#flattenkeys">flattenKeys</a> representation
+									of the errors encountered.</p>
+									<pre><code>const personValidator: ConformDeepValidator = {
+  name: (name, srcObj): TypeOrErr&lt;<span class="hljs-built_in">string</span>&gt; =&gt; !!name ? name : 'No Name!',
+  age: (age, srcObj): TypeOrErr&lt;Promise&lt;<span class="hljs-built_in">string</span>&gt;<span class="hljs-pattern-match">| <span class="hljs-built_in">string</span>&gt; =&gt;</span> !!age ? age : <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Promise</span>.</span></span>resolve(<span class="hljs-number">0</span>), <span class="hljs-comment">// Can be Async</span>
+}
+
+const validatePerson = conform<span class="hljs-constructor">Deep(<span class="hljs-params">personValidator</span>)</span>
+validate<span class="hljs-constructor">Person({})</span> <span class="hljs-comment">// {name: 'No name', age: 0}</span>
+validate<span class="hljs-constructor">Person({<span class="hljs-params">name</span>: '<span class="hljs-params">bob</span>, <span class="hljs-params">age</span>: 47})</span> <span class="hljs-comment">// {name: 'Bob', age: '47'}</span></code></pre></dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>validatorObj: <a href="interfaces/conformdeepvalidator.html" class="tsd-signature-type">ConformDeepValidator</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>An object containing functions matching your expected <code>srcObj</code></p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> srcObj: <span class="tsd-signature-type">object</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+						<p>Curried function accepting <code>srcObj</code> or a Promise containing the conforming object.</p>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
+											<span class="tsd-signature-symbol"> | </span>
+											<span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>
+										</h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="curryn" class="tsd-anchor"></a>
 				<h3>curryN</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1197,7 +1275,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in curryN.ts:32</li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/curryN.ts#L32">curryN.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1249,7 +1327,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/flattenKeys.ts#L11">flattenKeys.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/flattenKeys.ts#L11">flattenKeys.ts:11</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1280,7 +1358,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/flattenKeys.ts#L36">flattenKeys.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/flattenKeys.ts#L36">flattenKeys.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1315,6 +1393,56 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="ifelsewith" class="tsd-anchor"></a>
+				<h3>if<wbr>Else<wbr>With</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">if<wbr>Else<wbr>With<span class="tsd-signature-symbol">(</span>comparator<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, trueConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, falseConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/ifElseWith.ts#L36">ifElseWith.ts:36</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Applies its fourth argument to the first argument <code>comparator</code> returning the result of passing <code>arg</code> to <code>trueConditionFun</code> if true
+								or to <code>falseConditionFun</code> if false.</p>
+							</div>
+							<pre><code><span class="hljs-keyword">let</span> comparator = <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> arg &gt;= <span class="hljs-number">100</span>
+<span class="hljs-keyword">let</span> tCond = <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${arg}</span> is less than 100...`</span>
+<span class="hljs-keyword">let</span> fCond = <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${arg}</span> is large enough to work`</span>
+<span class="hljs-keyword">let</span> testNumber = ifElseWith(comparator, tCond, fCond)
+testNumber(<span class="hljs-number">99</span>) <span class="hljs-comment">// '99 is less than 100...'</span>
+testNumber(<span class="hljs-number">101</span>) <span class="hljs-comment">// '101 is large enough to work.</span>
+ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//false</span></code></pre>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>comparator: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> trueConditionFun: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> falseConditionFun: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> arg: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The value to apply to <code>funA</code> and <code>funB</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						<p>The result of <code>trueConditionFun(arg)</code> if <code>comparator(arg)</code> is true, <code>falseConditionFun(arg)</code> otherwise.
+						<code>return comparator(arg) ? trueConditionFun(arg) : falseConditionFun(arg)</code></p>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
 				<a name="isvalid" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Valid</h3>
@@ -1325,7 +1453,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in conformDeep.ts:36</li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L104">conformDeep.ts:104</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1339,6 +1467,77 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="orwith" class="tsd-anchor"></a>
+				<h3>or<wbr>With</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">or<wbr>With<span class="tsd-signature-symbol">(</span>funA<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, funB<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/orWith.ts#L30">orWith.ts:30</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Applies its third argument to Functions FunA and FunB returning the logical OR of their results.</p>
+							</div>
+							<pre><code>let A (arg) =&gt; arg &lt; <span class="hljs-number">100</span>
+let B (arg) =&gt; arg &gt; <span class="hljs-number">200</span>
+let ls100gt200 = andWith(A, B)
+<span class="hljs-function"><span class="hljs-title">ls100gt200</span><span class="hljs-params">(<span class="hljs-number">99</span>)</span></span> <span class="hljs-comment">//true</span>
+<span class="hljs-function"><span class="hljs-title">ls100gt200</span><span class="hljs-params">(<span class="hljs-number">201</span>)</span></span> <span class="hljs-comment">//true</span>
+<span class="hljs-function"><span class="hljs-title">ls100gt200</span><span class="hljs-params">(<span class="hljs-number">150</span>)</span></span> <span class="hljs-comment">//false</span></code></pre>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>funA: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The first function to apply <code>arg</code> to.</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> funB: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The second function to apply <code>arg</code> to.</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> arg: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The value to apply to <code>funA</code> and <code>funB</code></p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+						<p>The logical OR of the result of <code>funA(arg)</code>, <code>funB(arg)</code> - <code>(funA(arg) || funB(arg))</code></p>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
+											<span class="tsd-signature-symbol"> | </span>
+											<span class="tsd-signature-type">boolean</span>
+										</h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="unflattenkeys" class="tsd-anchor"></a>
 				<h3>unflatten<wbr>Keys</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -1348,7 +1547,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/ad04da2/src/unflattenKeys.ts#L26">unflattenKeys.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/unflattenKeys.ts#L26">unflattenKeys.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

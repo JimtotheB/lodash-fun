@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "prepublishOnly": "tsc",
+    "docs": "typedoc --mode file --theme minimal --target ES6 --out docs src",
     "test": "jest"
   },
   "keywords": [

@@ -5,7 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {ConformDeepError, DeepConform, TypeOrErr} from "../src/conformDeep";
+import {ConformDeepError, TypeOrErr, conformDeep} from "../src";
 
 describe('conformDeep', () => {
   test('Validation Usage', async () => {
@@ -24,7 +24,7 @@ describe('conformDeep', () => {
       player: playerValidatorFns,
       profile: profileValidatorFuns
     }
-    let objectValidator = DeepConform(playerValidatorFn)
+    let objectValidator = conformDeep(playerValidatorFn)
 
 
     let v = await objectValidator(configObj)
@@ -48,7 +48,7 @@ describe('conformDeep', () => {
       player: playerValidatorFns,
       profile: profileValidatorFuns
     }
-    let objectValidator = DeepConform(playerValidatorFn)
+    let objectValidator = conformDeep(playerValidatorFn)
 
 
     let v = await objectValidator(configObj)
@@ -72,7 +72,7 @@ describe('conformDeep', () => {
       player: playerValidatorFns,
       profile: profileValidatorFuns
     }
-    let objectValidator = DeepConform(playerValidatorFn)
+    let objectValidator = conformDeep(playerValidatorFn)
 
 
     let v = await objectValidator(configObj)
@@ -90,7 +90,7 @@ describe('conformDeep', () => {
       }
     }
 
-    let objectValidator = DeepConform(objectValidatorFuns)
+    let objectValidator = conformDeep(objectValidatorFuns)
 
     let n = {name: 'bob', age: 10}
     let v = await objectValidator(n)
@@ -105,7 +105,7 @@ describe('conformDeep', () => {
       err: (age, config) => new Error()
     }
 
-    let objectValidator = DeepConform(objectValidatorFuns)
+    let objectValidator = conformDeep(objectValidatorFuns)
 
     let n = {name: 'bob'}
     try {
@@ -127,7 +127,7 @@ describe('conformDeep', () => {
       }
     }
 
-    let objectValidator = DeepConform(objectValidatorFuns)
+    let objectValidator = conformDeep(objectValidatorFuns)
 
     let n = {name: 'bob', stats: {age: 10, birthday: 20}}
     let v = await objectValidator(n)
@@ -151,7 +151,7 @@ describe('conformDeep', () => {
       }
     }
 
-    let objectValidator = DeepConform(objectValidatorFuns)
+    let objectValidator = conformDeep(objectValidatorFuns)
 
     let n = {name: 'bob', stats: {age: 10, birthday: 20}}
 
@@ -180,7 +180,7 @@ describe('conformDeep', () => {
       }
     }
 
-    let innerValidator = DeepConform(innerValidatorFns)
+    let innerValidator = conformDeep(innerValidatorFns)
 
     let objectValidatorFuns = {
       name: (name) => name,
@@ -197,7 +197,7 @@ describe('conformDeep', () => {
       }
     }
 
-    let objectValidator = DeepConform(objectValidatorFuns)
+    let objectValidator = conformDeep(objectValidatorFuns)
 
     let n = {name: 'bob', stats: {age: 10, birthday: 20, nested: {a:1, b: 2, c: {d: 3}}}}
     let v = await objectValidator(n)
@@ -215,7 +215,7 @@ describe('conformDeep', () => {
     }
 
 
-    let objectValidator = DeepConform(constants)
+    let objectValidator = conformDeep(constants)
 
     let v = await objectValidator(configObj)
     expect(v).toEqual(expect.objectContaining(configObj))

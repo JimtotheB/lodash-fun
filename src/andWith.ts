@@ -4,28 +4,9 @@
  * @project lodash-fun
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
-import {curry} from 'lodash/fp'
 import {curryN} from './'
 import {ReturnsType} from './'
 
-/**
- * Applies its third argument to Functions FunA and FunB returning the logical AND of their results.
- *
- * ```
- * let A (arg) => arg >= 5
- * let B (arg) => arg <= 10
- * let betweenFiveAndTen = andWith(A, B)
- * betweenFiveAndTen(6) //true
- * betweenFiveAndTen(11) //false
- * ```
- */
-// export interface AndWith {
-//   (FunA: ReturnsType<boolean>, FunB?: ReturnsType<boolean>, arg?: any): boolean
-// }
-//
-// export const andWith = curry((funA: ReturnsType<boolean>, funB: ReturnsType<boolean>, arg: any): boolean => {
-//   return (funB(arg) && funB(arg))
-// })
 
 
 /**

@@ -933,28 +933,25 @@ img { max-width: 100%; }
 			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="../interfaces/deepconformvalidator.html" class="tsd-kind-icon">Deep<wbr>Conform<wbr>Validator</a>
+			<a href="../interfaces/conformdeepvalidationerrors.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validation<wbr>Errors</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/conformdeepvalidator.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/conformdeepvalidatorfun.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator<wbr>Fun</a>
 		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter">
 			<a href="../interfaces/returnstype.html" class="tsd-kind-icon">Returns<wbr>Type</a>
 		</li>
-		<li class=" tsd-kind-interface tsd-is-not-exported">
-			<a href="../interfaces/validatorfun.html" class="tsd-kind-icon">Validator<wbr>Fun</a>
-		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 			<a href="../globals.html#typeorerr" class="tsd-kind-icon">Type<wbr>OrErr</a>
 		</li>
-		<li class=" tsd-kind-variable">
-			<a href="../globals.html#deepconform" class="tsd-kind-icon">Deep<wbr>Conform</a>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#conform" class="tsd-kind-icon">conform</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="../globals.html#errorsfrom" class="tsd-kind-icon">errors<wbr>From</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="../globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="../globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="../globals.html#uncappedmapvalues" class="tsd-kind-icon">uncapped<wbr>Map<wbr>Values</a>
@@ -966,6 +963,9 @@ img { max-width: 100%; }
 			<a href="../globals.html#andwith" class="tsd-kind-icon">and<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="../globals.html#conformdeep" class="tsd-kind-icon">conform<wbr>Deep</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="../globals.html#curryn" class="tsd-kind-icon">curryN</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
@@ -974,8 +974,14 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#flattenkeys" class="tsd-kind-icon">flatten<wbr>Keys</a>
 		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
+		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="../globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#unflattenkeys" class="tsd-kind-icon">unflatten<wbr>Keys</a>
@@ -984,6 +990,18 @@ img { max-width: 100%; }
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Error returned by a rejecting <a href="../globals.html#conformdeep">conformDeep</a>.</p>
+				</div>
+				<dl class="tsd-comment-tags">
+					<dt>see</dt>
+					<dd><p><a href="../globals.html#conformdeep">conformDeep</a></p>
+					</dd>
+				</dl>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
@@ -1026,22 +1044,33 @@ img { max-width: 100%; }
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Conform<wbr>Deep<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, validationErrors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conformdeeperror.html" class="tsd-signature-type">ConformDeepError</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Conform<wbr>Deep<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, validationErrors<span class="tsd-signature-symbol">: </span><a href="../interfaces/conformdeepvalidationerrors.html" class="tsd-signature-type">ConformDeepValidationErrors</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conformdeeperror.html" class="tsd-signature-type">ConformDeepError</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in conformDeep.ts:15</li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L24">conformDeep.ts:24</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>message: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5>validationErrors: <span class="tsd-signature-type">__type</span></h5>
+								<h5>validationErrors: <a href="../interfaces/conformdeepvalidationerrors.html" class="tsd-signature-type">ConformDeepValidationErrors</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Contains a flattened representation of the keys containing
+										errors.</p>
+										<pre><code>.<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-params">(err: ConformDeepError)</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(err.validationErrors) {<span class="hljs-string">'stats.age'</span>: Error(...), <span class="hljs-string">'stats.height'</span>: Error(...)}
+})</code></pre>
+									</div>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="conformdeeperror.html" class="tsd-signature-type">ConformDeepError</a></h4>
@@ -1088,12 +1117,21 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="validationerrors" class="tsd-anchor"></a>
 				<h3>validation<wbr>Errors</h3>
-				<div class="tsd-signature tsd-kind-icon">validation<wbr>Errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__type</span></div>
+				<div class="tsd-signature tsd-kind-icon">validation<wbr>Errors<span class="tsd-signature-symbol">:</span> <a href="../interfaces/conformdeepvalidationerrors.html" class="tsd-signature-type">ConformDeepValidationErrors</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in conformDeep.ts:16</li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L37">conformDeep.ts:37</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Contains a flattened representation of the keys containing
+						errors.</p>
+						<pre><code>.<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-params">(err: ConformDeepError)</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(err.validationErrors) {<span class="hljs-string">'stats.age'</span>: Error(...), <span class="hljs-string">'stats.height'</span>: Error(...)}
+})</code></pre>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 				<a name="error" class="tsd-anchor"></a>
