@@ -12,8 +12,9 @@ export interface ReturnsType<T> {
 
 export * from './conformDeep'
 export {andWith} from './andWith'
-export {curryN} from './curryN'
+export * from './curryN'
 export {flattenKeys} from './flattenKeys'
 export {ifElseWith} from './ifElseWith'
 export {orWith} from './orWith'
 export {unflattenKeys} from './unflattenKeys'
+export {hasKeysWith} from './hasKeysWith'

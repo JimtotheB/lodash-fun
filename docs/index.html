@@ -925,6 +925,9 @@ img { max-width: 100%; }
 			<a href="interfaces/returnstype.html" class="tsd-kind-icon">Returns<wbr>Type</a>
 		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+			<a href="globals.html#functionortype" class="tsd-kind-icon">Function<wbr>OrType</a>
+		</li>
+		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 			<a href="globals.html#typeorerr" class="tsd-kind-icon">Type<wbr>OrErr</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
@@ -953,6 +956,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#flattenkeys" class="tsd-kind-icon">flatten<wbr>Keys</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#haskeyswith" class="tsd-kind-icon">has<wbr>Keys<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
@@ -1007,6 +1013,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Type aliases</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#functionortype" class="tsd-kind-icon">Function<wbr>OrType</a></li>
 							<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#typeorerr" class="tsd-kind-icon">Type<wbr>OrErr</a></li>
 						</ul>
 					</section>
@@ -1027,6 +1034,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function"><a href="globals.html#curryn" class="tsd-kind-icon">curryN</a></li>
 							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#flatten" class="tsd-kind-icon">flatten</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#flattenkeys" class="tsd-kind-icon">flatten<wbr>Keys</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#haskeyswith" class="tsd-kind-icon">has<wbr>Keys<wbr>With</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a></li>
 							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a></li>
 							<li class="tsd-kind-function"><a href="globals.html#orwith" class="tsd-kind-icon">or<wbr>With</a></li>
@@ -1039,12 +1047,27 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Type aliases</h2>
 			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+				<a name="functionortype" class="tsd-anchor"></a>
+				<h3>Function<wbr>OrType</h3>
+				<div class="tsd-signature tsd-kind-icon">Function<wbr>OrType<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/curryN.ts#L13">curryN.ts:13</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> For functions wrapping curryN, returns a function or eventually Type - T</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 				<a name="typeorerr" class="tsd-anchor"></a>
 				<h3>Type<wbr>OrErr</h3>
 				<div class="tsd-signature tsd-kind-icon">Type<wbr>OrErr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L45">conformDeep.ts:45</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L45">conformDeep.ts:45</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1057,7 +1080,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!config ? config : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null)).catch(identity)}if(isObject(val)) {return Bluebird.props(conform(val, config[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, validatorObj)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L106">conformDeep.ts:106</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L106">conformDeep.ts:106</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1067,7 +1090,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">errors<wbr>From<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;compose(omitBy(negate(isError)),flattenKeys)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L102">conformDeep.ts:102</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L102">conformDeep.ts:102</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1077,7 +1100,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">uncapped<wbr>Map<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;mapValues.convert({cap: false})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L13">conformDeep.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L13">conformDeep.ts:13</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1087,7 +1110,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">unflatten<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;compose(reduce((acc, [k, v]) &#x3D;&gt; set(k, v, acc), {}), toPairs)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/unflattenKeys.ts#L9">unflattenKeys.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/unflattenKeys.ts#L9">unflattenKeys.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1119,13 +1142,13 @@ img { max-width: 100%; }
 				<a name="andwith" class="tsd-anchor"></a>
 				<h3>and<wbr>With</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">and<wbr>With<span class="tsd-signature-symbol">(</span>funA<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, funB<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					<li class="tsd-signature tsd-kind-icon">and<wbr>With<span class="tsd-signature-symbol">(</span>funA<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, funB<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/andWith.ts#L30">andWith.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/andWith.ts#L27">andWith.ts:27</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1159,29 +1182,8 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>The logical AND of the result of <code>funA(arg)</code>, <code>funB(arg)</code> - <code>(funA(arg) &amp;&amp; funB(arg))</code></p>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
-											<span class="tsd-signature-symbol"> | </span>
-											<span class="tsd-signature-type">boolean</span>
-										</h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</section>
@@ -1189,13 +1191,13 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 				<a name="conformdeep" class="tsd-anchor"></a>
 				<h3>conform<wbr>Deep</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">conform<wbr>Deep<span class="tsd-signature-symbol">(</span>validatorObj<span class="tsd-signature-symbol">: </span><a href="interfaces/conformdeepvalidator.html" class="tsd-signature-type">ConformDeepValidator</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span>, srcObj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					<li class="tsd-signature tsd-kind-icon">conform<wbr>Deep<span class="tsd-signature-symbol">(</span>validatorObj<span class="tsd-signature-symbol">: </span><a href="interfaces/conformdeepvalidator.html" class="tsd-signature-type">ConformDeepValidator</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span>, srcObj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L159">conformDeep.ts:159</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L159">conformDeep.ts:159</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1239,29 +1241,8 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>Curried function accepting <code>srcObj</code> or a Promise containing the conforming object.</p>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
-											<span class="tsd-signature-symbol"> | </span>
-											<span class="tsd-signature-type">Bluebird</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>
-										</h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</section>
@@ -1275,7 +1256,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/curryN.ts#L32">curryN.ts:32</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/curryN.ts#L37">curryN.ts:37</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1327,7 +1308,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/flattenKeys.ts#L11">flattenKeys.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/flattenKeys.ts#L11">flattenKeys.ts:11</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1358,7 +1339,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/flattenKeys.ts#L36">flattenKeys.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/flattenKeys.ts#L36">flattenKeys.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1394,16 +1375,82 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="ifelsewith" class="tsd-anchor"></a>
-				<h3>if<wbr>Else<wbr>With</h3>
+				<a name="haskeyswith" class="tsd-anchor"></a>
+				<h3>has<wbr>Keys<wbr>With</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">if<wbr>Else<wbr>With<span class="tsd-signature-symbol">(</span>comparator<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, trueConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, falseConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">has<wbr>Keys<wbr>With<span class="tsd-signature-symbol">(</span>keys<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, constraintFun<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, obj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/ifElseWith.ts#L36">ifElseWith.ts:36</a></li>
+								<li>Defined in hasKeysWith.ts:38</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Ensures its third argument contains the keys in <code>keys</code> and that each passes <code>constraintFun</code></p>
+							</div>
+							<pre><code><span class="hljs-keyword">let</span> keys = <span class="hljs-literal">['<span class="hljs-identifier">a</span>', '<span class="hljs-identifier">b</span>', '<span class="hljs-identifier">c</span>']</span>
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">constraint</span> =<span class="hljs-function"> <span class="hljs-params">v</span> =&gt;</span> v &gt; <span class="hljs-number">10</span>
+<span class="hljs-keyword">let</span> allGt10 = has<span class="hljs-constructor">KeysWith(<span class="hljs-params">keys</span>, <span class="hljs-params">constraint</span>)</span>
+all<span class="hljs-constructor">Gt10({<span class="hljs-params">a</span>: 11, <span class="hljs-params">b</span>: 20, <span class="hljs-params">c</span>: 30})</span> <span class="hljs-comment">//true</span>
+all<span class="hljs-constructor">Gt10({<span class="hljs-params">b</span>: 20, <span class="hljs-params">c</span>: 30})</span> <span class="hljs-comment">//false</span>
+all<span class="hljs-constructor">Gt10({<span class="hljs-params">a</span>: 9, <span class="hljs-params">b</span>: 20, <span class="hljs-params">c</span>: 30})</span> <span class="hljs-comment">//false</span></code></pre>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>keys: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Array of keys expected in <code>obj</code></p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> constraintFun: <span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>applied to every key if found in <code>obj</code></p>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>item: <span class="tsd-signature-type">any</span></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> obj: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="ifelsewith" class="tsd-anchor"></a>
+				<h3>if<wbr>Else<wbr>With</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">if<wbr>Else<wbr>With<span class="tsd-signature-symbol">(</span>comparator<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, trueConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, falseConditionFun<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/ifElseWith.ts#L36">ifElseWith.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1422,22 +1469,30 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>comparator: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>comparator: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Evaluated with <code>arg</code></p>
+								</div>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> trueConditionFun: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Called with <code>arg</code> and returned if <code>comparator(arg)</code> is true.</p>
+								</div>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> falseConditionFun: <a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Called with <code>arg</code> and returned if <code>comparator(arg)</code> is false</p>
+								</div>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> arg: <span class="tsd-signature-type">any</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<p>The value to apply to <code>funA</code> and <code>funB</code></p>
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>The result of <code>trueConditionFun(arg)</code> if <code>comparator(arg)</code> is true, <code>falseConditionFun(arg)</code> otherwise.
 						<code>return comparator(arg) ? trueConditionFun(arg) : falseConditionFun(arg)</code></p>
 					</li>
@@ -1453,7 +1508,7 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/conformDeep.ts#L104">conformDeep.ts:104</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L104">conformDeep.ts:104</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1470,13 +1525,13 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 				<a name="orwith" class="tsd-anchor"></a>
 				<h3>or<wbr>With</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">or<wbr>With<span class="tsd-signature-symbol">(</span>funA<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, funB<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					<li class="tsd-signature tsd-kind-icon">or<wbr>With<span class="tsd-signature-symbol">(</span>funA<span class="tsd-signature-symbol">: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, funB<span class="tsd-signature-symbol">?: </span><a href="interfaces/returnstype.html" class="tsd-signature-type">ReturnsType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, arg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/orWith.ts#L30">orWith.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/orWith.ts#L29">orWith.ts:29</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1511,29 +1566,8 @@ let ls100gt200 = andWith(A, B)
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="globals.html#functionortype" class="tsd-signature-type">FunctionOrType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>The logical OR of the result of <code>funA(arg)</code>, <code>funB(arg)</code> - <code>(funA(arg) || funB(arg))</code></p>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
-											<span class="tsd-signature-symbol"> | </span>
-											<span class="tsd-signature-type">boolean</span>
-										</h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</section>
@@ -1547,7 +1581,7 @@ let ls100gt200 = andWith(A, B)
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/b31129a/src/unflattenKeys.ts#L26">unflattenKeys.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/unflattenKeys.ts#L26">unflattenKeys.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

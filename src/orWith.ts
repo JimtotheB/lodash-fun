@@ -5,8 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {curryN} from './'
-import {ReturnsType} from './'
+import {curryN, ReturnsType, FunctionOrType} from './'
 
 
 /**
@@ -27,6 +26,6 @@ import {ReturnsType} from './'
  *
  * @returns The logical OR of the result of `funA(arg)`, `funB(arg)` - `(funA(arg) || funB(arg))`
  */
-export function orWith(funA: ReturnsType<boolean>, funB?: ReturnsType<boolean>, arg?: any): (...args: any) => any | boolean {
+export function orWith(funA: ReturnsType<boolean>, funB?: ReturnsType<boolean>, arg?: any): FunctionOrType<boolean> {
   return curryN(3, (fA,fB, a) => (fA(a) || fB(a)), ...arguments)
 }

@@ -7,8 +7,7 @@
 
 import {curry} from 'lodash/fp'
 
-import {curryN} from './'
-import {ReturnsType} from './'
+import {curryN, ReturnsType, FunctionOrType} from './'
 
 
 /**
@@ -25,14 +24,15 @@ import {ReturnsType} from './'
  * ls100gt200(150) //false
  * ```
  *
- * @param funA The first function to apply `arg` to.
- * @param funB The second function to apply `arg` to.
- * @param arg - The value to apply to `funA` and `funB`
+ * @param comparator Evaluated with `arg`
+ * @param trueConditionFun Called with `arg` and returned if `comparator(arg)` is true.
+ * @param falseConditionFun Called with `arg` and returned if `comparator(arg)` is false
+ * @param arg
  *
  * @returns The result of `trueConditionFun(arg)` if `comparator(arg)` is true, `falseConditionFun(arg)` otherwise.
  * `return comparator(arg) ? trueConditionFun(arg) : falseConditionFun(arg)`
  *
  */
-export function ifElseWith(comparator: ReturnsType<any>, trueConditionFun?: ReturnsType<any>, falseConditionFun?: ReturnsType<any>, arg?: any){
+export function ifElseWith(comparator: ReturnsType<boolean>, trueConditionFun?: ReturnsType<any>, falseConditionFun?: ReturnsType<any>, arg?: any): FunctionOrType<any>{
   return curryN(4, (c, tCond, fCond, arg) => c(arg) ? tCond(arg) : fCond(arg), ...arguments)
 }

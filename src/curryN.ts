@@ -8,6 +8,11 @@
 import {drop} from 'lodash/fp'
 
 /**
+ *  For functions wrapping curryN, returns a function or eventually Type - T
+ */
+export type FunctionOrType<T> = ((...args: any) => any) | T
+
+/**
  * Used for building curried functions so the Typescript Type system is available. This function wraps
  * the function provided as its second argument and calls it when `N` number of arguments have been supplied.
  * Generally `FP.curry(fn)` is sufficient for everyday usage. If you wish to create a curried
