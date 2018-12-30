@@ -7,7 +7,7 @@
 
 import {curry} from 'lodash/fp'
 
-import {curryN, ReturnsType, FunctionOrType} from './'
+import {curryN, ReturnsType, FunctionOrType} from '..'
 
 
 /**

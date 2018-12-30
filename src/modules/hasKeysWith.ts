@@ -6,7 +6,7 @@
  */
 
 import {every, has, get} from 'lodash/fp'
-import {curryN, FunctionOrType} from "./";
+import {curryN, FunctionOrType} from "..";
 
 
 

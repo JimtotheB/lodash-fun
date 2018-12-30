@@ -5,7 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {curryN} from "../src/curryN";
+import {curryN} from "../src/modules/curryN";
 
 describe('CurryN', function () {
 

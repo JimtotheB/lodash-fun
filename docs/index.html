@@ -1052,7 +1052,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function<wbr>OrType<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/curryN.ts#L13">curryN.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/curryN.ts#L13">modules/curryN.ts:13</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1067,7 +1067,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Type<wbr>OrErr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L45">conformDeep.ts:45</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L45">modules/conformDeep.ts:45</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1080,7 +1080,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!config ? config : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null)).catch(identity)}if(isObject(val)) {return Bluebird.props(conform(val, config[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, validatorObj)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L106">conformDeep.ts:106</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L106">modules/conformDeep.ts:106</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1090,7 +1090,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">errors<wbr>From<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;compose(omitBy(negate(isError)),flattenKeys)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L102">conformDeep.ts:102</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L102">modules/conformDeep.ts:102</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1100,7 +1100,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">uncapped<wbr>Map<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;mapValues.convert({cap: false})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L13">conformDeep.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L13">modules/conformDeep.ts:13</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1110,7 +1110,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">unflatten<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;compose(reduce((acc, [k, v]) &#x3D;&gt; set(k, v, acc), {}), toPairs)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/unflattenKeys.ts#L9">unflattenKeys.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/unflattenKeys.ts#L9">modules/unflattenKeys.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1148,7 +1148,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/andWith.ts#L27">andWith.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/andWith.ts#L27">modules/andWith.ts:27</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1197,7 +1197,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L159">conformDeep.ts:159</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L159">modules/conformDeep.ts:159</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1256,7 +1256,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/curryN.ts#L37">curryN.ts:37</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/curryN.ts#L37">modules/curryN.ts:37</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1308,7 +1308,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/flattenKeys.ts#L11">flattenKeys.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/flattenKeys.ts#L11">modules/flattenKeys.ts:11</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1339,7 +1339,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/flattenKeys.ts#L36">flattenKeys.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/flattenKeys.ts#L36">modules/flattenKeys.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1384,7 +1384,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in hasKeysWith.ts:38</li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/hasKeysWith.ts#L38">modules/hasKeysWith.ts:38</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1450,7 +1450,7 @@ all<span class="hljs-constructor">Gt10({<span class="hljs-params">a</span>: 9, <
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/ifElseWith.ts#L36">ifElseWith.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/ifElseWith.ts#L36">modules/ifElseWith.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1508,7 +1508,7 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/conformDeep.ts#L104">conformDeep.ts:104</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/conformDeep.ts#L104">modules/conformDeep.ts:104</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1531,7 +1531,7 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/orWith.ts#L29">orWith.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/orWith.ts#L29">modules/orWith.ts:29</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1581,7 +1581,7 @@ let ls100gt200 = andWith(A, B)
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/e4a0c0b/src/unflattenKeys.ts#L26">unflattenKeys.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/462dd58/src/modules/unflattenKeys.ts#L26">modules/unflattenKeys.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

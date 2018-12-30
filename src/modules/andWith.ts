@@ -4,7 +4,7 @@
  * @project lodash-fun
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
-import {curryN, FunctionOrType, ReturnsType} from './'
+import {curryN, FunctionOrType, ReturnsType} from '..'
 
 /**
  * Applies its third argument to Functions FunA and FunB returning the logical AND of their results.

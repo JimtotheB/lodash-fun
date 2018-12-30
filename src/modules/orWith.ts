@@ -5,7 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {curryN, ReturnsType, FunctionOrType} from './'
+import {curryN, ReturnsType, FunctionOrType} from '..'
 
 
 /**
