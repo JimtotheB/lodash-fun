@@ -4,7 +4,10 @@
   "description": "A collection of logic and other functions for use with lodash/fp.",
   "main": "index.js",
   "files": [
+    "index.d.ts",
+    "index.js.map",
     "modules/**/*",
+    "Readme.md",
     "LICENCE"
   ],
   "scripts": {
