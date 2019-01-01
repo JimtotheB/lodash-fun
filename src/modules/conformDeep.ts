@@ -6,7 +6,6 @@
  */
 
 import {compose, curry, filter, identity, isError, isFunction, isObject, mapValues, negate, omitBy} from 'lodash/fp'
-import {curryN, FunctionOrType} from "./curryN";
 import {flattenKeys} from './flattenKeys'
 import * as Bluebird from 'bluebird'
 // @ts-ignore
@@ -156,6 +155,8 @@ const conform = curry((validatorObj, config): Bluebird<any> =>{
  *
  * @returns Curried function accepting `srcObj` or a Promise containing the conforming object.
  */
-export function conformDeep(validatorObj: ConformDeepValidator | object, srcObj?: object): FunctionOrType<Bluebird<any>>{
-  return curryN(2, conform, ...arguments)
+export function conformDeep(validatorObj: ConformDeepValidator | object, srcObj?: object) {
+  // @ts-ignore
+  return conform(...arguments)
+  // return curryN(2, conform, ...arguments)
 }

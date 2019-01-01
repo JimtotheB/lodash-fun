@@ -11,10 +11,10 @@ export interface ReturnsType<T> {
 }
 
 export * from './modules/conformDeep'
-export {andWith} from './modules/andWith'
-export * from './modules/curryN'
-export {flattenKeys} from './modules/flattenKeys'
-export {ifElseWith} from './modules/ifElseWith'
-export {orWith} from './modules/orWith'
-export {unflattenKeys} from './modules/unflattenKeys'
-export {hasKeysWith} from './modules/hasKeysWith'
+export * from './modules/andWith'
+export * from './modules/switchWith'
+export * from './modules/flattenKeys'
+export * from './modules/ifElseWith'
+export * from './modules/orWith'
+export * from './modules/unflattenKeys'
+export * from './modules/hasKeysWith'

@@ -7,8 +7,9 @@
 
 import {curry} from 'lodash/fp'
 
-import {curryN, ReturnsType, FunctionOrType} from '..'
+import {ReturnsType} from '..'
 
+const curriedIfElseWith = curry((c, tCond, fCond, arg) => c(arg) ? tCond(arg) : fCond(arg))
 
 /**
  * Applies its fourth argument to the first argument `comparator` returning the result of passing `arg` to `trueConditionFun` if true
@@ -33,6 +34,8 @@ import {curryN, ReturnsType, FunctionOrType} from '..'
  * `return comparator(arg) ? trueConditionFun(arg) : falseConditionFun(arg)`
  *
  */
-export function ifElseWith(comparator: ReturnsType<boolean>, trueConditionFun?: ReturnsType<any>, falseConditionFun?: ReturnsType<any>, arg?: any): FunctionOrType<any>{
-  return curryN(4, (c, tCond, fCond, arg) => c(arg) ? tCond(arg) : fCond(arg), ...arguments)
+export function ifElseWith(comparator: ReturnsType<boolean>, trueConditionFun?: ReturnsType<any>, falseConditionFun?: ReturnsType<any>, arg?: any){
+  // @ts-ignore
+  return curriedIfElseWith(...arguments)
+  // return curryN(4, (c, tCond, fCond, arg) => c(arg) ? tCond(arg) : fCond(arg), ...arguments)
 }

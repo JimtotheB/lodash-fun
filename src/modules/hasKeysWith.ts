@@ -5,18 +5,14 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {every, has, get} from 'lodash/fp'
-import {curryN, FunctionOrType} from "..";
+import {curry, every, has, get} from 'lodash/fp'
 
+const curriedHasKeysWith = curry((k, cfun, o)=>{
+  return every((item) => {
+    return has(item, o) ? cfun(get(item, o)) : false
+  }, k)
+})
 
-
-
-/**
- *
- * @param keys Array of keys expected in `obj`
- * @param constraintFun applied to every key if found in `obj`
- * @param obj
- */
 
 /**
  * Ensures its third argument contains the keys in `keys` and that each passes `constraintFun`
@@ -35,10 +31,8 @@ import {curryN, FunctionOrType} from "..";
  * @param obj
  */
 
-export function hasKeysWith(keys: string[], constraintFun?: (item: any) => boolean, obj?: any): FunctionOrType<boolean> {
-  return curryN(3, (k, cfun, o)=>{
-    return every((item) => {
-      return has(item, o) ? cfun(get(item, o)) : false
-    }, k)
-  }, ...arguments)
+export function hasKeysWith(keys: string[], constraintFun?: (item: any) => boolean, obj?: any) {
+  // @ts-ignore
+  return curriedHasKeysWith(...arguments)
+
 }

@@ -4,7 +4,10 @@
  * @project lodash-fun
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
-import {curryN, FunctionOrType, ReturnsType} from '..'
+import { ReturnsType} from '..'
+import {curry} from 'lodash/fp'
+
+const curriedAndWith = curry((fA,fB, a) => (fA(a) && fB(a)) )
 
 /**
  * Applies its third argument to Functions FunA and FunB returning the logical AND of their results.
@@ -24,6 +27,8 @@ import {curryN, FunctionOrType, ReturnsType} from '..'
  * @returns The logical AND of the result of `funA(arg)`, `funB(arg)` - `(funA(arg) && funB(arg))`
  */
 
-export function andWith(funA: ReturnsType<boolean>, funB?: ReturnsType<boolean>, arg?: any): FunctionOrType<boolean> {
-  return curryN(3, (fA,fB, a) => (fA(a) && fB(a)), ...arguments)
+
+export function andWith(funA: ReturnsType<boolean>, funB?: ReturnsType<boolean>, arg?: any) {
+  // @ts-ignore
+  return curriedAndWith(...arguments)
 }
