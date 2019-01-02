@@ -103,25 +103,30 @@ const errorsFrom: any = compose(omitBy(negate(isError)),flattenKeys)
 const isValid = flattenSrc => !filter(isError,flattenKeys(flattenSrc)).length
 
 const conform = curry((validatorObj, config): Bluebird<any> =>{
-  return Bluebird.try(() => {
-    let confObj = !!config ? config : {}
-    let validated = uncappedMapValues((val, idx) => {
-      if(isFunction(val)) {return Bluebird.try(() => val(confObj[idx] || null)).catch(identity)}
-      if(isObject(val)) {
-        return Bluebird.props(conform(val, config[idx]))
-          .catch(err => err.validationErrors)
-      }
-      return Promise.resolve(val)
-    }, validatorObj)
 
-    return Bluebird.props(validated)
-      .then((res): any => {
-        if(isValid(res)){
-          return res
+  const recurConform = (v, c) => {
+    return Bluebird.try(() => {
+      let confObj = !!c ? c : {}
+
+      let validated = uncappedMapValues((val, idx) => {
+        if(isFunction(val)) {return Bluebird.try(() => val(confObj[idx] || null, config)).catch(identity)}
+        if(isObject(val)) {
+          return Bluebird.props(recurConform(val, confObj[idx]))
+            .catch(err => err.validationErrors)
         }
-        throw new ConformDeepError('Provided Object has error values.', errorsFrom(res))
-      })
-  })
+        return Promise.resolve(val)
+      }, v)
+
+      return Bluebird.props(validated)
+        .then((res): any => {
+          if(isValid(res)){
+            return res
+          }
+          throw new ConformDeepError('Provided Object has error values.', errorsFrom(res))
+        })
+    })
+  }
+  return recurConform(validatorObj, config)
 })
 
 
@@ -158,5 +163,4 @@ const conform = curry((validatorObj, config): Bluebird<any> =>{
 export function conformDeep(validatorObj: ConformDeepValidator | object, srcObj?: object) {
   // @ts-ignore
   return conform(...arguments)
-  // return curryN(2, conform, ...arguments)
 }

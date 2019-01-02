@@ -12,8 +12,10 @@ describe('conformDeep', () => {
     let configObj = {player: {name: 'bob', age: 17}, profile: {rank: 10, score: 1000}}
 
     let playerValidatorFns = {
-      name: (name : string, srcConfig) : TypeOrErr<string> => name,
-      age: (age, config) => age
+      name: (name : string, config) : TypeOrErr<string> => name,
+      age: (age) => {
+        return age
+      }
     }
 
     let profileValidatorFuns = {
@@ -166,22 +168,6 @@ describe('conformDeep', () => {
 
   test('Deep Nested Validators', async() => {
 
-    let innerValidatorFns = {
-      a: (a) => {
-        return a
-      },
-      b: (b) => {
-        return b
-      },
-      c: {
-        d: (d) => {
-          return d
-        }
-      }
-    }
-
-    let innerValidator = conformDeep(innerValidatorFns)
-
     let objectValidatorFuns = {
       name: (name) => name,
       stats: {
@@ -204,6 +190,47 @@ describe('conformDeep', () => {
 
     expect(v).toEqual(expect.objectContaining(n))
 
+  })
+
+  test('Second argument to validators is entire config object.', async() => {
+    let n = {name: 'bob', stats: {age: 10, birthday: 20, nested: {a:1, b: 2, c: {d: 3}}}}
+    let level1src = null
+    let level2src = null
+    let level3src = null
+
+    let objectValidatorFuns = {
+      name: (name, srcObj) => {
+        level1src = srcObj
+        return name
+      },
+      stats: {
+        age: (age, srcObj) => {
+          level2src = srcObj
+          return age
+        },
+        birthday: (birthday) =>  birthday,
+        nested: {
+          a: (a) => a,
+          b: (b) => b,
+          c: {
+            d: (d, srcObj) => {
+              level3src = srcObj
+              return d
+            }
+          }
+        }
+      }
+    }
+
+    let objectValidator = conformDeep(objectValidatorFuns)
+
+
+    let v = await objectValidator(n)
+
+    expect(v).toEqual(expect.objectContaining(n))
+    expect(level1src).toEqual(expect.objectContaining(n))
+    expect(level2src).toEqual(expect.objectContaining(n))
+    expect(level3src).toEqual(expect.objectContaining(n))
   })
 
   test('Constant Value in validation object', async () => {

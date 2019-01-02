@@ -1068,7 +1068,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Type<wbr>OrErr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L44">modules/conformDeep.ts:44</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L44">modules/conformDeep.ts:44</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1078,10 +1078,10 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 				<a name="conform" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> conform</h3>
-				<div class="tsd-signature tsd-kind-icon">conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!config ? config : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null)).catch(identity)}if(isObject(val)) {return Bluebird.props(conform(val, config[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, validatorObj)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})})</span></div>
+				<div class="tsd-signature tsd-kind-icon">conform<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((validatorObj, config): Bluebird&lt;any&gt; &#x3D;&gt;{const recurConform &#x3D; (v, c) &#x3D;&gt; {return Bluebird.try(() &#x3D;&gt; {let confObj &#x3D; !!c ? c : {}let validated &#x3D; uncappedMapValues((val, idx) &#x3D;&gt; {if(isFunction(val)) {return Bluebird.try(() &#x3D;&gt; val(confObj[idx] || null, config)).catch(identity)}if(isObject(val)) {return Bluebird.props(recurConform(val, confObj[idx])).catch(err &#x3D;&gt; err.validationErrors)}return Promise.resolve(val)}, v)return Bluebird.props(validated).then((res): any &#x3D;&gt; {if(isValid(res)){return res}throw new ConformDeepError(&#x27;Provided Object has error values.&#x27;, errorsFrom(res))})})}return recurConform(validatorObj, config)})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L105">modules/conformDeep.ts:105</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L105">modules/conformDeep.ts:105</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1091,7 +1091,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">curried<wbr>And<wbr>With<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((fA,fB, a) &#x3D;&gt; (fA(a) &amp;&amp; fB(a)) )</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/andWith.ts#L10">modules/andWith.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/andWith.ts#L10">modules/andWith.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1101,7 +1101,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">curried<wbr>Has<wbr>Keys<wbr>With<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((k, cfun, o)&#x3D;&gt;{return every((item) &#x3D;&gt; {return has(item, o) ? cfun(get(item, o)) : false}, k)})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/hasKeysWith.ts#L10">modules/hasKeysWith.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/hasKeysWith.ts#L10">modules/hasKeysWith.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1111,7 +1111,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">curried<wbr>IfElse<wbr>With<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((c, tCond, fCond, arg) &#x3D;&gt; c(arg) ? tCond(arg) : fCond(arg))</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/ifElseWith.ts#L12">modules/ifElseWith.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/ifElseWith.ts#L12">modules/ifElseWith.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1121,7 +1121,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">curried<wbr>OrWith<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CurriedFunction3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;curry((fA,fB, a) &#x3D;&gt; (fA(a) || fB(a)))</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/orWith.ts#L11">modules/orWith.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/orWith.ts#L11">modules/orWith.ts:11</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1141,7 +1141,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">errors<wbr>From<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;compose(omitBy(negate(isError)),flattenKeys)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L101">modules/conformDeep.ts:101</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L101">modules/conformDeep.ts:101</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1151,7 +1151,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">uncapped<wbr>Map<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;mapValues.convert({cap: false})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L12">modules/conformDeep.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L12">modules/conformDeep.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1161,7 +1161,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">unflatten<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;compose(reduce((acc, [k, v]) &#x3D;&gt; set(k, v, acc), {}), toPairs)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/unflattenKeys.ts#L9">modules/unflattenKeys.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/unflattenKeys.ts#L9">modules/unflattenKeys.ts:9</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1199,7 +1199,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/andWith.ts#L31">modules/andWith.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/andWith.ts#L31">modules/andWith.ts:31</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1248,7 +1248,7 @@ between<span class="hljs-constructor">FiveAndTen(11)</span> <span class="hljs-co
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L158">modules/conformDeep.ts:158</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L163">modules/conformDeep.ts:163</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1307,7 +1307,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/flattenKeys.ts#L11">modules/flattenKeys.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/flattenKeys.ts#L11">modules/flattenKeys.ts:11</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1338,7 +1338,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/flattenKeys.ts#L36">modules/flattenKeys.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/flattenKeys.ts#L36">modules/flattenKeys.ts:36</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1383,7 +1383,7 @@ validate<span class="hljs-constructor">Person({<span class="hljs-params">name</s
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/hasKeysWith.ts#L34">modules/hasKeysWith.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/hasKeysWith.ts#L34">modules/hasKeysWith.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1464,7 +1464,7 @@ all<span class="hljs-constructor">Gt10({<span class="hljs-params">a</span>: 9, <
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/ifElseWith.ts#L37">modules/ifElseWith.ts:37</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/ifElseWith.ts#L37">modules/ifElseWith.ts:37</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1522,7 +1522,7 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/conformDeep.ts#L103">modules/conformDeep.ts:103</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/conformDeep.ts#L103">modules/conformDeep.ts:103</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1545,7 +1545,7 @@ ls100gt200(<span class="hljs-number">150</span>) <span class="hljs-comment">//fa
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/orWith.ts#L30">modules/orWith.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/orWith.ts#L30">modules/orWith.ts:30</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1667,7 +1667,7 @@ randomResult(<span class="hljs-number">301</span>) <span class="hljs-comment">//
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/c8e57d2/src/modules/unflattenKeys.ts#L26">modules/unflattenKeys.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/99fb25f/src/modules/unflattenKeys.ts#L26">modules/unflattenKeys.ts:26</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
