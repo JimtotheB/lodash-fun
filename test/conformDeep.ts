@@ -187,7 +187,6 @@ describe('conformDeep', () => {
 
     let n = {name: 'bob', stats: {age: 10, birthday: 20, nested: {a:1, b: 2, c: {d: 3}}}}
     let v = await objectValidator(n)
-
     expect(v).toEqual(expect.objectContaining(n))
 
   })
