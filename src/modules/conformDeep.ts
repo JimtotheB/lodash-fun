@@ -5,11 +5,19 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {compose, curry, filter, identity, isError, isFunction, isObject, mapValues, negate, omitBy} from 'lodash/fp'
+import {compose, curry, filter, identity, isError, isFunction, isObject, mapValues, negate, omitBy, has} from 'lodash/fp'
 import {flattenKeys} from './flattenKeys'
 import * as Bluebird from 'bluebird'
 // @ts-ignore
 const uncappedMapValues = mapValues.convert({cap: false})
+
+/**
+ * Checks for Type ConformDeepError
+ * @param error
+ */
+export function isConformDeepError(error: Error | ConformDeepError): error is ConformDeepError {
+  return has('validationErrors', error)
+}
 
 export interface ConformDeepValidationErrors {
   [key: string]: Error
