@@ -5,7 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {ConformDeepError, TypeOrErr, conformDeep} from "../src";
+import {ConformError,TypeOrErr, conformDeep} from "../src";
 
 describe('conformDeep', () => {
   test('Validation Usage', async () => {
@@ -112,9 +112,10 @@ describe('conformDeep', () => {
     let n = {name: 'bob'}
     try {
       let v = await objectValidator(n)
+      throw new Error('Test failure')
     }
     catch(e){
-      expect(e).toEqual(expect.any(ConformDeepError))
+      expect(e).toEqual(expect.any(ConformError))
       expect(e.validationErrors).toEqual(expect.objectContaining({name: expect.any(Error), err: expect.any(Error)}))
     }
   })
@@ -161,7 +162,7 @@ describe('conformDeep', () => {
       let v = await objectValidator(n)
     }
     catch(e){
-      expect(e).toEqual(expect.any(ConformDeepError))
+      expect(e).toEqual(expect.any(ConformError))
       expect(e.validationErrors).toEqual(expect.objectContaining({'stats.birthday': expect.any(Error)}))
     }
   })
