@@ -910,16 +910,22 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class">
-			<a href="../classes/conformdeeperror.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Error</a>
-		</li>
-		<li class=" tsd-kind-interface">
-			<a href="conformdeepvalidationerrors.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validation<wbr>Errors</a>
+			<a href="../classes/conformerror.html" class="tsd-kind-icon">Conform<wbr>Error</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="conformdeepvalidator.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="conformdeepvalidatorfun.html" class="tsd-kind-icon">Conform<wbr>Deep<wbr>Validator<wbr>Fun</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="conformvalidationerrors.html" class="tsd-kind-icon">Conform<wbr>Validation<wbr>Errors</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="keytransformer.html" class="tsd-kind-icon">Key<wbr>Transformer</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="keytransformerfun.html" class="tsd-kind-icon">Key<wbr>Transformer<wbr>Fun</a>
 		</li>
 		<li class="current tsd-kind-interface tsd-has-type-parameter">
 			<a href="returnstype.html" class="tsd-kind-icon">Returns<wbr>Type</a>
@@ -952,6 +958,9 @@ img { max-width: 100%; }
 			<a href="../globals.html#errorsfrom" class="tsd-kind-icon">errors<wbr>From</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="../globals.html#transform" class="tsd-kind-icon">transform</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="../globals.html#uncappedmapvalues" class="tsd-kind-icon">uncapped<wbr>Map<wbr>Values</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
@@ -965,6 +974,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#conformdeep" class="tsd-kind-icon">conform<wbr>Deep</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#conformtransformed" class="tsd-kind-icon">conform<wbr>Transformed</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="../globals.html#flatten" class="tsd-kind-icon">flatten</a>
@@ -982,7 +994,7 @@ img { max-width: 100%; }
 			<a href="../globals.html#ifelsewith" class="tsd-kind-icon">if<wbr>Else<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="../globals.html#isconformdeeperror" class="tsd-kind-icon">is<wbr>Conform<wbr>Deep<wbr>Error</a>
+			<a href="../globals.html#isconformerror" class="tsd-kind-icon">is<wbr>Conform<wbr>Error</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="../globals.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
@@ -995,6 +1007,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#switchwith" class="tsd-kind-icon">switch<wbr>With</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="../globals.html#transformkeys" class="tsd-kind-icon">transform<wbr>Keys</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="../globals.html#unflattenkeys" class="tsd-kind-icon">unflatten<wbr>Keys</a>
@@ -1010,7 +1025,7 @@ img { max-width: 100%; }
 					<dd><p>index</p>
 					</dd>
 					<dt>author</dt>
-					<dd><p>Jim Bulkowski <a href="mailto:&#x6a;&#x69;&#x6d;&#46;&#98;&#64;&#112;&#x61;&#x70;&#x65;&#114;&#x65;&#108;&#x65;&#99;&#116;&#114;&#x6f;&#x6e;&#46;&#99;&#111;&#x6d;">&#x6a;&#x69;&#x6d;&#46;&#98;&#64;&#112;&#x61;&#x70;&#x65;&#114;&#x65;&#108;&#x65;&#99;&#116;&#114;&#x6f;&#x6e;&#46;&#99;&#111;&#x6d;</a></p>
+					<dd><p>Jim Bulkowski <a href="mailto:&#106;&#x69;&#109;&#x2e;&#x62;&#x40;&#x70;&#x61;&#x70;&#101;&#114;&#x65;&#108;&#x65;&#99;&#x74;&#x72;&#x6f;&#110;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x69;&#109;&#x2e;&#x62;&#x40;&#x70;&#x61;&#x70;&#101;&#114;&#x65;&#108;&#x65;&#99;&#x74;&#x72;&#x6f;&#110;&#46;&#x63;&#x6f;&#x6d;</a></p>
 					</dd>
 					<dt>project</dt>
 					<dd><p>lodash-fun</p>
@@ -1046,7 +1061,7 @@ img { max-width: 100%; }
 				<li class="tsd-description">
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/077aa27/src/index.ts#L9">index.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/JimtotheB/lodash-fun/blob/333cb4d/src/index.ts#L9">index.ts:9</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-parameters-title">Parameters</h4>
