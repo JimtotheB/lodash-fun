@@ -90,7 +90,7 @@ describe('transformKeys', () => {
 
   test('No Errors', async () => {
     let transformFuns = {
-      a: ()=> 'A',
+      a: (val, src)=> 'A',
       b: {
         c: {
           d: () => 'D'
@@ -108,6 +108,30 @@ describe('transformKeys', () => {
     }
 
     let transformObj = transformKeys(transformFuns)
+    let v = await transformObj({})
+    expect(conformTransformed(v)).toEqual(expect.objectContaining(expectObj))
+  })
+
+  test('Constants', async () => {
+    let transformConstants = {
+      a: 'A',
+      b: {
+        c: {
+          d: 'D'
+        }
+      }
+    }
+
+    let expectObj = {
+      a: 'A',
+      b: {
+        c: {
+          d: 'D'
+        }
+      }
+    }
+
+    let transformObj = transformKeys(transformConstants)
     let v = await transformObj({})
     expect(conformTransformed(v)).toEqual(expect.objectContaining(expectObj))
   })

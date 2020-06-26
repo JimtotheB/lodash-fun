@@ -5,9 +5,9 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {curry} from 'lodash/fp'
+import {curry, compose, toPairs, map, join} from 'lodash/fp'
 
-import {conformTransformed, transformKeys} from "./transformKeys";
+import {uncappedMapValues,ConformError, conformTransformed, transformKeys} from "./transformKeys";
 
 export type TypeOrErr<T> = T | Error
 
@@ -106,4 +106,18 @@ const conform = curry((validatorObj, config) => {
 export function conformDeep(validatorObj: ConformDeepValidator | object, srcObj?: object) {
   // @ts-ignore
   return conform(...arguments)
+}
+
+
+const defaultFormat = compose(join('\n'),map(([k,v]) => {
+  return `${k}: ${v.message}`
+}), toPairs)
+
+/**
+ * Accepts a ConformError instance and formats its validationErrors into human readable form.
+ *
+ * @param conformError
+ */
+export function formatConformError(conformError: ConformError, formatter = defaultFormat){
+    return formatter(conformError.validationErrors)
 }

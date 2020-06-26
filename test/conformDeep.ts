@@ -5,7 +5,7 @@
  * @license MIT {@link http://opensource.org/licenses/MIT}
  */
 
-import {ConformError,TypeOrErr, conformDeep} from "../src";
+import {ConformError,TypeOrErr, conformDeep, formatConformError} from "../src";
 
 describe('conformDeep', () => {
   test('Validation Usage', async () => {
@@ -117,6 +117,33 @@ describe('conformDeep', () => {
     catch(e){
       expect(e).toEqual(expect.any(ConformError))
       expect(e.validationErrors).toEqual(expect.objectContaining({name: expect.any(Error), err: expect.any(Error)}))
+    }
+  })
+
+  test('Formats Errors', async () => {
+    let objectValidatorFuns = {
+      name: (name) => {
+        throw new Error('This is an error')
+      },
+      other: {
+        deep: () => {
+          throw new Error('This is deep.')
+        }
+      }
+    }
+
+    let objectValidator = conformDeep(objectValidatorFuns)
+
+    let n = {name: 'bob'}
+    try {
+      let v = await objectValidator(n)
+      throw new Error('Test failure')
+    }
+    catch(e){
+      let human = formatConformError(e)
+      console.log(human)
+      expect(human).toEqual(
+        `name: This is an error\nother.deep: This is deep.`)
     }
   })
 
