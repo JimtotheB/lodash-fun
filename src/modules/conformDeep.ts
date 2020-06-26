@@ -118,6 +118,6 @@ const defaultFormat = compose(join('\n'),map(([k,v]) => {
  *
  * @param conformError
  */
-export function formatConformError(conformError: ConformError, formatter = defaultFormat){
+export function formatConformError(conformError: ConformError, formatter = defaultFormat): string {
     return formatter(conformError.validationErrors)
 }
