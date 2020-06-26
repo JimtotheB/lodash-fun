@@ -24,11 +24,11 @@
   "author": "Jim Bulkowski <jim.b@paperelectron.com> (http://paperelectron.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^23.3.10",
+    "@types/jest": "^26.0.3",
     "@types/lodash": "^4.14.119",
     "@types/node": "^14.0.14",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.5",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5"
   },
