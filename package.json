@@ -33,7 +33,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "bluebird": "^3.5.3",
-    "lodash": "^4.17.15"
+    "bluebird": "^3.7.2",
+    "lodash": "^4.17.21"
   }
 }
